@@ -2,10 +2,11 @@ class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
         int i = 0;
-       for (i = 0; i < nums.size(); i++) {
+       while (i < nums.size()) {
             if (nums[i] == target || nums[i] > target) {
                 return i;
             }
+            i++;
        }
        return i; 
     }
