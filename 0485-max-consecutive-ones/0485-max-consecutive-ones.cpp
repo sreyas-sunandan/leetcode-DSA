@@ -12,12 +12,11 @@ public:
                 if(flag > count)
                     count = flag;
                     flag = 0;
-            }
-            
+            }   
         }
         if(flag > count)
-                    count = flag;
-                    flag = 0;
-        return count;
+            return flag;
+        else
+            return count;
     }
 };
