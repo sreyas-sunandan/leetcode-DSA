@@ -1,23 +1,15 @@
 class Solution {
 public:
     vector<int> findDisappearedNumbers(vector<int>& nums) {
-        vector<int> ans(0);
-        int i = 0;
-        bool flag = true;
-        std::sort(nums.begin(), nums.end());
-        while(i < nums.size()) {
-            flag = true;
-            for(int a = i; a < nums.size(); a++){
-                if(nums[a] == i + 1){
-                    flag = false;
-                    break;
-                }
+        unordered_set<int> numSet(nums.begin(), nums.end());
+        vector<int> result;
+        
+        for (int i = 1; i <= nums.size(); i++) {
+            if (numSet.find(i) == numSet.end()) {
+                result.push_back(i);
             }
-            if(flag){
-                ans.push_back(i + 1);
-            }
-            i++;
         }
-        return ans;
+        
+        return result;        
     }
 };
